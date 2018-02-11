@@ -24,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(stringFromJNI());
     }
 
+    // Sample method for calling Java from C++
+    public String stringFromJava()
+    {
+        return "Hello from Java!";
+    }
+
     /**
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
