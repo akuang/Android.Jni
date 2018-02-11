@@ -22,6 +22,18 @@ public class MainActivity extends AppCompatActivity {
         // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText(stringFromJNI());
+
+        // Example of calling C native methods in a Java class
+        SampleJni sample = new SampleJni();
+
+        // Calling C method from Java
+        String cstr = sample.stringFromJni();
+
+        // Calling Java field from C
+        String jstr = sample.stringFromJava();
+
+        TextView tvJni = (TextView) findViewById(R.id.sample_jni_text);
+        tvJni.setText(cstr + " AND " + jstr);
     }
 
     // Sample method for calling Java from C++
